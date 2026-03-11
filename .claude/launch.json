@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "portfolio-dev",
+      "runtimeExecutable": "cmd",
+      "runtimeArgs": ["/c", "node_modules\\.bin\\next.CMD", "dev"],
+      "port": 3000
+    }
+  ]
+}
