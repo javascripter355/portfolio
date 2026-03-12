@@ -11,7 +11,7 @@ const WORK_STATS = [
 
 export function WorkSection() {
   return (
-    <section id={workContent.id} className="relative h-full no-scrollbar overflow-y-auto sm:overflow-hidden border border-white/10 bg-black/10">
+    <section id={workContent.id} className="relative h-full overflow-hidden border border-white/10 bg-black/10">
       <div className="pointer-events-none absolute inset-0 bg-dot-grid opacity-15" />
       <div
         className="pointer-events-none absolute inset-x-0 top-0 h-48"
