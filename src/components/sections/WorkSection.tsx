@@ -11,7 +11,7 @@ const WORK_STATS = [
 
 export function WorkSection() {
   return (
-    <section id={workContent.id} className="relative h-full overflow-hidden border border-white/10 bg-black/10">
+    <section id={workContent.id} className="relative h-full overflow-x-hidden overflow-y-auto lg:overflow-hidden border border-white/10 bg-black/10">
       <div className="pointer-events-none absolute inset-0 bg-dot-grid opacity-15" />
       <div
         className="pointer-events-none absolute inset-x-0 top-0 h-48"
@@ -35,9 +35,9 @@ export function WorkSection() {
             </p>
           </div>
 
-          <div className="section-enter-4 mt-8 grid gap-1">
+          <div className="section-enter-4 mt-6 sm:mt-8 grid gap-1">
             {WORK_STATS.map((item) => (
-              <div key={item.label} className="border-t border-white/10 py-4">
+              <div key={item.label} className="border-t border-white/10 py-2.5 sm:py-4">
                 <p className="text-xs uppercase tracking-[0.18em] text-sky-200/70">
                   {item.label}
                 </p>
@@ -59,7 +59,7 @@ export function WorkSection() {
                 const root = document.getElementById("snap-root");
                 if (root) root.scrollTo({ top: root.clientHeight * sectionIndexById.freelance, behavior: "smooth" });
               }}
-              className="sm:hidden group mt-5 inline-flex items-center gap-2 border border-white/15 px-4 py-2.5 font-mono text-[10px] uppercase tracking-[0.22em] text-neutral-200 transition-all duration-300 hover:border-sky-300/40 hover:text-white"
+              className="lg:hidden group mt-5 inline-flex items-center gap-2 border border-white/15 px-4 py-2.5 font-mono text-[10px] uppercase tracking-[0.22em] text-neutral-200 transition-all duration-300 hover:border-sky-300/40 hover:text-white"
             >
               See freelance offer
               <span className="transition-transform duration-300 group-hover:translate-x-1">-&gt;</span>
@@ -67,7 +67,7 @@ export function WorkSection() {
           </div>
         </div>
 
-        <div className="section-enter-5 hidden sm:flex min-h-0 flex-col p-6 pb-8 sm:p-10">
+        <div className="section-enter-5 hidden lg:flex min-h-0 flex-col p-6 pb-8 sm:p-10">
           <div className="grid min-h-0 flex-1 grid-cols-1 gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(17rem,0.86fr)] lg:grid-rows-[auto_auto]">
             <figure className="relative overflow-hidden border border-white/10 bg-black/40">
               <div className="relative aspect-[16/9] min-h-[11rem]">
