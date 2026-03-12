@@ -11,7 +11,7 @@ function getRelPos(idx: number, cur: number, total: number): number {
   return p;
 }
 
-function cardStyle(pos: number, hov: boolean): React.CSSProperties {
+function cardStyle(pos: number, hov: boolean, isMobile: boolean): React.CSSProperties {
   const tx =
     "transform 0.72s cubic-bezier(0.18, 0.9, 0.22, 1), opacity 0.56s ease, filter 0.56s ease";
 
@@ -22,9 +22,12 @@ function cardStyle(pos: number, hov: boolean): React.CSSProperties {
   const s = Math.sign(pos);
   const a = Math.abs(pos);
 
+  const sideOffset = isMobile ? 55 : 28;
+  const farOffset = isMobile ? 110 : 54;
+
   if (a === 1) {
     return {
-      transform: `translateX(${s * 28}vw) scale(0.61) translateY(2vh)`,
+      transform: `translateX(${s * sideOffset}vw) scale(0.61) translateY(2vh)`,
       opacity: hov ? 0.82 : 0.56,
       zIndex: 10,
       filter: hov ? "brightness(0.78)" : "brightness(0.52)",
@@ -35,7 +38,7 @@ function cardStyle(pos: number, hov: boolean): React.CSSProperties {
 
   if (a === 2) {
     return {
-      transform: `translateX(${s * 54}vw) scale(0.38) translateY(5vh)`,
+      transform: `translateX(${s * farOffset}vw) scale(0.38) translateY(5vh)`,
       opacity: 0.18,
       zIndex: 5,
       filter: "brightness(0.34)",
@@ -50,8 +53,16 @@ function cardStyle(pos: number, hov: boolean): React.CSSProperties {
 export function PhotographySection() {
   const [cur, setCur] = useState(0);
   const [hov, setHov] = useState<number | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
   const dragX = useRef<number | null>(null);
   const total = photographySlides.length;
+
+  useEffect(() => {
+    const update = () => setIsMobile(window.innerWidth < 640);
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
 
   const advance = useCallback((dir: 1 | -1) => setCur((i) => (i + dir + total) % total), [total]);
 
@@ -130,7 +141,7 @@ export function PhotographySection() {
               <div
                 key={slide.src}
                 className="absolute"
-                style={{ ...cardStyle(pos, isHov), width: "min(28vw, 320px)", aspectRatio: "3 / 4", transformOrigin: "center center" }}
+                style={{ ...cardStyle(pos, isHov, isMobile), width: isMobile ? "min(62vw, 300px)" : "min(28vw, 320px)", aspectRatio: "3 / 4", transformOrigin: "center center" }}
                 onClick={() => {
                   if (pos === -1) advance(-1);
                   if (pos === 1) advance(1);

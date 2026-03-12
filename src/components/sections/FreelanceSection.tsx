@@ -12,7 +12,7 @@ export function FreelanceSection() {
   return (
     <section
       id={freelanceContent.id}
-      className="relative h-full overflow-hidden border border-white/10 bg-black/10"
+      className="relative h-full no-scrollbar overflow-y-auto sm:overflow-hidden border border-white/10 bg-black/10"
     >
       <div className="pointer-events-none absolute inset-0 bg-dot-grid opacity-12" />
       <div
@@ -37,7 +37,7 @@ export function FreelanceSection() {
             </p>
           </div>
 
-          <div className="section-enter-5 mt-8 grid gap-1">
+          <div className="section-enter-5 mt-8 hidden sm:grid gap-1">
             {STYLE_NOTES.map((line, index) => (
               <div key={line} className="flex items-center justify-between border-t border-white/10 py-4">
                 <div>
@@ -57,14 +57,14 @@ export function FreelanceSection() {
             <h3 className="mt-5 max-w-[12ch] text-[clamp(2rem,3.8vw,3.8rem)] font-black leading-[0.94] tracking-[-0.045em] text-white">
               Start here, then move to Fiverr.
             </h3>
-            <p className="mt-8 max-w-lg text-[clamp(1rem,1.45vw,1.3rem)] leading-[1.4] text-neutral-200">
+            <p className="mt-5 sm:mt-8 max-w-lg text-[clamp(1rem,1.45vw,1.3rem)] leading-[1.4] text-neutral-200">
               {freelanceContent.paragraphs[2]}
             </p>
 
-            <div className="mt-8 grid gap-4">
+            <div className="mt-5 sm:mt-8 grid gap-3 sm:gap-4">
               <a
                 href="mailto:laurentiuslionel@gmail.com"
-                className="group relative block border-t border-white/10 py-4 pr-20 transition-colors duration-300 hover:border-sky-300/30"
+                className="group relative block border-t border-white/10 py-3 sm:py-4 pr-20 transition-colors duration-300 hover:border-sky-300/30"
               >
                 <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-sky-300/45">01  Email</p>
                 <p className="mt-2 text-2xl font-semibold tracking-tight text-white sm:text-3xl">laurentiuslionel@gmail.com</p>
@@ -79,7 +79,7 @@ export function FreelanceSection() {
                 href="https://instagram.com/laurentius.lionel"
                 target="_blank"
                 rel="noreferrer"
-                className="group relative block border-t border-white/10 py-4 pr-20 transition-colors duration-300 hover:border-sky-300/30"
+                className="group relative block border-t border-white/10 py-3 sm:py-4 pr-20 transition-colors duration-300 hover:border-sky-300/30"
               >
                 <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-sky-300/45">02  Instagram</p>
                 <p className="mt-2 text-2xl font-semibold tracking-tight text-white sm:text-3xl">@laurentius.lionel</p>
@@ -94,7 +94,7 @@ export function FreelanceSection() {
                 href="https://fiverr.com/laurentlionel"
                 target="_blank"
                 rel="noreferrer"
-                className="group relative block border-t border-white/10 py-4 pr-20 transition-colors duration-300 hover:border-sky-300/30"
+                className="group relative block border-t border-white/10 py-3 sm:py-4 pr-20 transition-colors duration-300 hover:border-sky-300/30"
               >
                 <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-sky-300/45">03  Fiverr</p>
                 <p className="mt-2 text-2xl font-semibold tracking-tight text-white sm:text-3xl">fiverr.com/laurentlionel</p>

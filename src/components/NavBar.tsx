@@ -29,7 +29,7 @@ export function NavBar() {
           <button
             type="button"
             onClick={() => scrollToSection(0)}
-            className="nav-enter-soft inline-flex min-h-9 items-center gap-2 self-start font-mono text-[0.66rem] tracking-[0.3em] text-white uppercase transition-all duration-300 hover:text-sky-100 sm:min-h-10 sm:gap-3 sm:text-[0.72rem]"
+            className="nav-enter-soft shrink-0 inline-flex min-h-9 items-center gap-2 self-start font-mono text-[0.66rem] tracking-[0.3em] text-white uppercase transition-all duration-300 hover:text-sky-100 sm:min-h-10 sm:gap-3 sm:text-[0.72rem]"
           >
             <span className="nav-status-dot" aria-hidden="true" />
             <span>{siteIdentity.displayName}</span>
@@ -38,13 +38,13 @@ export function NavBar() {
             </span>
           </button>
 
-          <nav aria-label="Primary" className="nav-enter-soft flex flex-wrap items-center justify-end gap-x-1.5 gap-y-1.5 sm:gap-x-2">
+          <nav aria-label="Primary" className="nav-enter-soft no-scrollbar flex overflow-x-auto items-center gap-x-1 sm:gap-x-2 sm:justify-end">
             {navItems.map((item, index) => (
               <button
                 key={item.id}
                 type="button"
                 onClick={() => scrollToSection(index)}
-                className="nav-chip min-h-9 px-2.5 py-1.5 font-mono text-[0.58rem] tracking-[0.22em] text-sky-50/86 uppercase transition-all duration-300 hover:text-white sm:min-h-10 sm:px-3 sm:text-[0.62rem]"
+                className="nav-chip shrink-0 min-h-9 px-2 py-1.5 font-mono text-[0.58rem] tracking-[0.18em] text-sky-50/86 uppercase transition-all duration-300 hover:text-white sm:min-h-10 sm:px-3 sm:tracking-[0.22em] sm:text-[0.62rem]"
               >
                 {item.shortLabel}
               </button>

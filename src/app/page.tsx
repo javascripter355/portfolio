@@ -135,7 +135,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div id="photography" className="snap-start h-screen relative overflow-hidden flex flex-col pt-20 pb-6 px-6 sm:px-10">
+        <div id="photography" className="snap-start h-screen relative overflow-hidden flex flex-col pt-14 sm:pt-20 pb-6 px-6 sm:px-10">
           <div className="relative z-10 w-full flex-1 flex flex-col min-h-0" style={getSectionStyle(progress, 1)}>
             <div key={entryKeys[1]} className="relative w-full flex-1 flex flex-col min-h-0">
               <PhotographySection />
@@ -143,7 +143,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div id="work" className="snap-start h-screen relative overflow-hidden pt-16 pb-6 sm:pb-8">
+        <div id="work" className="snap-start h-screen relative sm:overflow-hidden pt-16 pb-6 sm:pb-8">
           <div className="relative z-10 h-full w-full" style={getSectionStyle(progress, 2)}>
             <div key={entryKeys[2]} className="relative h-full w-full px-6 sm:px-10">
               <WorkSection />
